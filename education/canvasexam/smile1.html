@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+
+#myCanvas {
+	margin-top: 5%;
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<h1>김창헌의 HTML5 API 실습</h1>
+	<button onclick="save();">Save</button>
+	<button onclick="restore();">Restore</button>
+	<button onclick="initialize();">Clear</button>
+	<br>
+	<canvas id="myCanvas" width="600" height="600"></canvas>
+	<script>
+		var canvas;
+		var context;
+		var rect;
+		var drawColor = "black";
+		canvas = document.getElementById("myCanvas");
+		context = canvas.getContext("2d");
+		rect = canvas.getBoundingClientRect();
+		initialize();
+		draw();
+
+		function draw() {
+
+			// 오른쪽 귀
+			context.beginPath();
+			context.arc(440, 150, 70, 0, Math.PI * 2, false);
+			context.fillStyle = '#FFE4B5';
+			context.fill();
+
+			context.beginPath();
+			context.arc(440, 150, 70, Math.PI * 0.5, Math.PI * 1.7, true);
+			context.fillStyle = '#FFDFB0';
+			context.fill();
+
+			context.beginPath();
+			context.arc(440, 150, 50, 0, Math.PI * 2, false);
+			context.fillStyle = '#FFD0A1';
+			context.fill();
+
+			// 왼쪽 귀
+			context.beginPath();
+			context.arc(160, 150, 70, 0, Math.PI * 2, false);
+			context.fillStyle = '#FFE4B5';
+			context.fill();
+
+			context.beginPath();
+			context.arc(160, 150, 50, 0, Math.PI * 2, false);
+			context.fillStyle = '#FFD0A1';
+			context.fill();
+			// 얼굴
+			context.beginPath();
+			context.arc(300, 300, 220, 0, Math.PI * 2, false);
+			context.fillStyle = '#FFE4B5';
+			context.fill();
+
+			context.beginPath();
+			context.arc(300, 300, 220, Math.PI * 1.8, Math.PI * 0.8, false);
+			context.fillStyle = '#FFDFB0';
+			context.fill();
+
+			context.beginPath();
+			context.arc(260, 250, 220, Math.PI * 1.85, Math.PI * 0.74, false);
+			context.fillStyle = '#FFE4B5';
+			context.fill();
+
+			// 눈
+			context.beginPath();
+			context.arc(220, 280, 20, 0, Math.PI * 2, false);
+			context.fillStyle = 'black';
+			context.fill();
+			
+			context.beginPath();
+			context.arc(215, 270, 3, 0, Math.PI * 2, false);
+			context.fillStyle = 'white';
+			context.fill();
+			
+			context.beginPath();
+			context.arc(380, 280, 20, 0, Math.PI * 2, false);
+			context.fillStyle = 'black';
+			context.fill();
+			
+			context.beginPath();
+			context.arc(375, 270, 3, 0, Math.PI * 2, false);
+			context.fillStyle = 'white';
+			context.fill();
+
+			// 홍조
+			context.beginPath();
+			context.arc(200, 350, 40, 0, Math.PI * 2, false);
+			context.fillStyle = '#d94844';
+			context.fill();
+
+			context.beginPath();
+			context.arc(400, 350, 40, 0, Math.PI * 2, false);
+			context.fillStyle = '#d94844';
+			context.fill();
+
+			//수염
+
+			context.beginPath();
+			context.lineCap = "round";
+			context.lineWidth = 13;
+			context.moveTo(300, 355);
+			context.lineTo(390, 320);
+			context.stroke();
+
+			context.beginPath();
+			context.lineCap = "round";
+			context.lineWidth = 13;
+			context.moveTo(300, 345);
+			context.lineTo(390, 380);
+			context.stroke();
+
+			context.beginPath();
+			context.lineCap = "round";
+			context.lineWidth = 13;
+			context.moveTo(300, 355);
+			context.lineTo(210, 320);
+			context.stroke();
+
+			context.beginPath();
+			context.lineCap = "round";
+			context.lineWidth = 13;
+			context.moveTo(300, 345);
+			context.lineTo(210, 380);
+			context.stroke();
+
+			// 입
+			context.beginPath();
+			context.arc(300, 370, 35, 0, (180 * Math.PI) / 180, false);
+			context.fillStyle = '#F232920';
+			context.fill();
+
+			// 코
+			context.beginPath();
+			context.arc(270, 350, 35, 0, Math.PI * 2, false);
+			context.fillStyle = 'white';
+			context.fill();
+
+			context.beginPath();
+			context.arc(330, 350, 35, 0, Math.PI * 2, false);
+			context.fillStyle = '#E8F5FF';
+			context.fill();
+			
+			context.beginPath();
+			context.arc(325, 345, 33.4, 0, Math.PI * 2, false); // 매개변수  x, y, r, startAngle endAngle, , ccr(true)
+			context.fillStyle = 'white'; // 참고, 베지어곡선: curvePoint1X, curvePoint1Y, curvePoint2X, curvePoint2Y, endX_Point, endY_Point
+			context.fill();
+			
+			context.beginPath();
+			context.arc(300, 370, 70, Math.PI * 1.85, Math.PI * 1.13, true);
+			context.fillStyle = 'white';
+			context.fill();
+
+		}
+
+		function initialize() {
+			context.clearRect(0, 0, 600, 600);
+			context.beginPath();
+			context.rect(0, 0, 600, 600);
+			context.fillStyle = 'white';
+			context.fill();
+		}
+
+		function save() {
+			alert(canvas.toDataURL());
+			window.localStorage.setItem("memocanvas", canvas.toDataURL());
+		}
+
+		function restore() {
+			const img = new Image();
+			img.src = window.localStorage.memocanvas;
+			img.onload = function() {
+				context.drawImage(img, 0, 0);
+			}
+		}
+	</script>
+</body>
+</html>

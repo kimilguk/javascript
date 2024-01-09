@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script>  
+function fn_dft_img() {
+
+  const canvas = document.getElementById("myCanvas");
+			const ctx = canvas.getContext("2d");
+			
+			ctx.lineWidth = 2;
+			ctx.beginPath();
+			ctx.moveTo(93, 47);
+			ctx.lineTo(120, 60);
+			ctx.lineTo(129, 39);
+			ctx.lineTo(159, 60);
+			ctx.lineTo(177, 42);
+			ctx.lineTo(204, 63);
+			ctx.lineTo(225, 45);
+			ctx.lineTo(249, 72);
+			ctx.lineTo(273, 48);
+			ctx.lineTo(291, 75);
+			ctx.lineTo(315, 51);
+			ctx.lineTo(333, 84);
+			ctx.lineTo(357, 60);
+			ctx.lineTo(375, 90);
+			ctx.lineTo(402, 68);//잔디머리
+			ctx.bezierCurveTo(408, 108, 390, 180, 360, 210);//귀
+			ctx.bezierCurveTo(408, 198, 384, 285, 342, 258);//볼
+			ctx.bezierCurveTo(300, 330, 180, 315, 120, 280);//턱
+			ctx.bezierCurveTo(120, 280, 66, 252, 84, 216);//턱2
+			ctx.bezierCurveTo(84, 216, 96, 198, 97, 180);//머리1
+			ctx.bezierCurveTo(96, 180, 108, 150, 93, 47);//머리2
+			ctx.fillStyle = "#dec06b";
+			ctx.strokeStyle = "#000000";
+			ctx.fill();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(98, 168);
+			ctx.bezierCurveTo(98, 162, 72, 168, 91, 204);//귀
+			ctx.fillStyle = "#dec06b";
+			ctx.fill();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(351, 233);
+			ctx.bezierCurveTo(354, 225, 363, 216, 375, 221);//귀 모양
+			ctx.fillStyle = "#dec06b";
+			ctx.fill();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(363, 220);
+			ctx.bezierCurveTo(370, 230, 370, 230, 368, 235);//귀모양
+			ctx.fillStyle = "#dec06b";
+			ctx.fill();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(130, 115);
+			ctx.bezierCurveTo(150, 100, 170, 100, 185, 105);//눈썹 왼쪽쪽
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(305, 125);
+			ctx.bezierCurveTo(280, 105, 250, 105, 250, 110);//눈썹
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(135, 143);
+			ctx.bezierCurveTo(140, 140, 148, 137, 157, 139);//아래 눈썹 왼쪽
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(279, 150);
+			ctx.bezierCurveTo(279, 150, 268, 145, 260, 146);//눈썹
+			ctx.stroke();
+			
+			
+			
+			//왼쪽눈 테두리
+			ctx.beginPath();
+			ctx.moveTo(150, 147);
+			ctx.bezierCurveTo(150, 144, 170, 144, 180, 150);//왼쪽눈
+			ctx.bezierCurveTo(185, 170, 182, 175, 175, 190);//왼쪽눈
+			ctx.bezierCurveTo(173, 190, 170, 191, 163, 191);//왼쪽눈
+			ctx.bezierCurveTo(169, 185, 180, 160, 156, 146);//왼쪽눈
+			ctx.moveTo(156,146);
+			ctx.bezierCurveTo(145, 145, 140, 150, 128, 156);//왼쪽눈
+			ctx.bezierCurveTo(128, 160, 123, 170, 132, 186);//왼쪽눈
+			ctx.bezierCurveTo(132, 186, 135, 190, 140, 190);//왼쪽눈
+			ctx.bezierCurveTo(130, 175, 138, 150, 145, 148);//왼쪽눈
+			ctx.bezierCurveTo(148, 146, 150, 146, 156, 146);//왼쪽눈
+			
+			ctx.strokeStyle = 'rgba(255, 255, 255, 0)';
+			ctx.fillStyle = "#efefef";
+			ctx.fill();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(150,147);
+			ctx.bezierCurveTo(150, 144, 153, 144, 156, 146);
+			ctx.bezierCurveTo(180, 160, 169, 185, 164, 191);
+			ctx.bezierCurveTo(173, 190, 170, 191, 140, 191);
+			ctx.bezierCurveTo(130, 175, 138, 150, 145, 148);//왼쪽눈
+			ctx.strokeStyle = 'rgba(255, 255, 255, 0)';
+			ctx.fillStyle = "#454545";
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.beginPath();
+			ctx.moveTo(150, 147);
+			ctx.bezierCurveTo(150, 144, 170, 144, 180, 150); //오른쪽위
+			ctx.moveTo(175, 190);
+			ctx.bezierCurveTo(173, 190, 170, 191, 163, 190); //오른쪽 아래
+			ctx.moveTo(163, 190);
+			ctx.bezierCurveTo(169, 185, 180, 160, 156, 146); //오른쪽 가운데
+			ctx.moveTo(156,146);
+			ctx.bezierCurveTo(145, 145, 140, 150, 128, 156);//왼쪽위
+			ctx.moveTo(132,186);
+			ctx.bezierCurveTo(132, 186, 135, 190, 140, 190);//왼쪽눈 아래
+			ctx.moveTo(140,190);
+			ctx.bezierCurveTo(130, 175, 138, 150, 145, 148);//왼쪽눈 가운데
+			ctx.strokeStyle = "#000000"; // 검정색으로 변경
+			ctx.stroke(); // 
+			
+			
+			
+			//왼쪽눈 부속
+			
+			
+			ctx.beginPath();
+			ctx.ellipse(160, 160, 7, 9, 0, 0, 2 * Math.PI);
+			ctx.fillStyle = "#ffffff";
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.beginPath();
+			ctx.ellipse(143, 180, 6, 6, 0, 0, 2 * Math.PI);
+			ctx.fillStyle = "#ffffff";
+			ctx.fill();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.ellipse(150, 170, 5.5, 5, 0, 0, 2 * Math.PI);
+			ctx.fillStyle = "#000000";
+			ctx.fill();
+			ctx.stroke();
+			
+			///왼쪽눈 완료
+			
+			
+			//오른쪽눈
+			
+			//오른쪽눈 -왼
+			ctx.beginPath();
+			ctx.moveTo(250, 155);
+			ctx.quadraticCurveTo(260, 153, 270, 155);
+			ctx.quadraticCurveTo(250, 170, 260, 200);
+			ctx.quadraticCurveTo(255, 200, 250, 198);
+			ctx.quadraticCurveTo(240, 178, 250, 155);
+			
+			ctx.strokeStyle = 'rgba(255, 255, 255, 0)';
+			ctx.fillStyle = "#efefef";
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			//오른쪽눈 동공
+			ctx.beginPath();
+			
+			ctx.moveTo(270, 155);
+			ctx.quadraticCurveTo(250, 170, 260, 200);
+			ctx.quadraticCurveTo(280, 205, 290, 200);
+			ctx.quadraticCurveTo(300, 180, 288, 160);
+			ctx.quadraticCurveTo(284, 155, 270, 155);
+			
+			
+			ctx.fillStyle = "#454545";
+			ctx.fill();
+			ctx.stroke(); // 
+			
+			//오른쪽눈 오른쪽
+			
+			ctx.beginPath();
+			ctx.moveTo(280, 157);
+			ctx.quadraticCurveTo(285, 157, 303, 165);
+			ctx.quadraticCurveTo(305, 180, 298, 196);
+			ctx.quadraticCurveTo(291, 200, 290, 200);
+			ctx.quadraticCurveTo(300, 180, 288, 157);
+			ctx.fillStyle = "#ffffff";
+			ctx.fill();
+			ctx.stroke(); // 
+			
+			
+			
+			
+			ctx.beginPath();
+			ctx.moveTo(250,155);
+			ctx.quadraticCurveTo(270, 150, 303, 165);
+			ctx.moveTo(249, 197);
+			ctx.quadraticCurveTo(275, 208, 300, 197);
+			ctx.moveTo(290,200);
+			ctx.quadraticCurveTo(300, 180, 284, 157);
+			ctx.moveTo(270,155);
+			ctx.quadraticCurveTo(250, 170, 260, 200);
+			
+			ctx.strokeStyle = "#000000"; // 검정색으로 변경
+			ctx.stroke(); // 
+			
+			//오른쪽눈 부속
+			
+			
+			ctx.beginPath();
+			ctx.ellipse(285, 170, 7, 9, 0, 0, 2 * Math.PI);
+			ctx.fillStyle = "#ffffff";
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.beginPath();
+			ctx.ellipse(265, 190, 6, 6, 0, 0, 2 * Math.PI);
+			ctx.fillStyle = "#ffffff";
+			ctx.fill();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.ellipse(274, 181, 6, 6, 0, 0, 2 * Math.PI);
+			ctx.fillStyle = "#000000";
+			ctx.fill();
+			ctx.stroke();
+			
+			///오른쪽눈 완료
+			
+			
+			
+			//코
+			ctx.beginPath();
+			ctx.moveTo(200,215);
+			ctx.quadraticCurveTo(190, 210, 202, 202);
+			ctx.strokeStyle = "#000000"; 
+			ctx.stroke();
+			
+			//주근깨- 왼쪽
+			ctx.beginPath(); 
+			ctx.arc(120, 215, 1.5, 0, 1.5 * Math.PI); 
+			ctx.fillStyle = 'black'; 
+			ctx.fill(); 
+			
+			ctx.beginPath(); 
+			ctx.arc(150, 218, 1.7, 0, 1.7 * Math.PI);
+			ctx.fillStyle = 'black'; 
+			ctx.fill(); 
+			
+			ctx.beginPath(); 
+			ctx.arc(135, 234, 1.5, 0, 1.5 * Math.PI); 
+			ctx.fillStyle = 'black'; 
+			ctx.fill(); 
+			
+			
+			//주근깨-오른쪽
+			ctx.beginPath(); 
+			ctx.arc(310, 230, 1.5, 0, 1.5 * Math.PI); 
+			ctx.fillStyle = 'black';
+			ctx.fill();
+			
+			ctx.beginPath(); 
+			ctx.arc(278, 228, 1.7, 0, 1.7 * Math.PI); 
+			ctx.fillStyle = 'black'; 
+			ctx.fill(); 
+			
+			ctx.beginPath(); 
+			ctx.arc(295, 250, 1.5, 0, 1.5 * Math.PI); 
+			ctx.fillStyle = 'black'; 
+			ctx.fill(); 
+			
+			
+			
+			//입
+			ctx.beginPath();
+			ctx.moveTo(190,243);
+			ctx.quadraticCurveTo(200,249, 240, 248);
+			ctx.strokeStyle = "#000000"; 
+			ctx.stroke();
+			
+			ctx.moveTo(207, 260);
+			ctx.quadraticCurveTo(210, 262, 220, 260);
+			ctx.strokeStyle = "#000000"; 
+			ctx.stroke();
+			
+			
+			
+			//목
+			ctx.beginPath();
+			ctx.moveTo(207,307);
+			ctx.quadraticCurveTo(230,325, 245, 307);
+			ctx.quadraticCurveTo(225,312, 208, 307);
+			ctx.fillStyle = "#dec06b";		
+			ctx.fill(); 
+			ctx.stroke();
+			
+			//옷-목
+			ctx.beginPath();
+			ctx.moveTo(189,305);
+			ctx.quadraticCurveTo(189,304, 207, 307);
+			ctx.quadraticCurveTo(230,325, 245, 307);
+			ctx.quadraticCurveTo(250,308, 269, 305);
+			ctx.quadraticCurveTo(230,350, 178, 302);
+			ctx.strokeStyle = "#000000";
+			ctx.fillStyle = "#fe8007";		
+			ctx.fill(); 
+			ctx.stroke();
+			
+			//옷-팔
+			
+			ctx.beginPath();
+			ctx.moveTo(170,302);
+			ctx.quadraticCurveTo(110,290, 70, 410);
+			ctx.quadraticCurveTo(130,410, 140, 410);
+			ctx.quadraticCurveTo(130,360, 140, 360);
+			ctx.quadraticCurveTo(130,360, 140, 410);
+			ctx.quadraticCurveTo(140,410, 170, 410);
+			ctx.quadraticCurveTo(170,390, 170, 390);//T
+			ctx.quadraticCurveTo(200,398, 280, 398);//T
+			ctx.quadraticCurveTo(280,410, 280, 410); //T
+			ctx.quadraticCurveTo(280, 410, 300, 410);
+			ctx.quadraticCurveTo(300,398, 300, 405);
+			ctx.quadraticCurveTo(300, 405, 300, 410);
+			ctx.quadraticCurveTo(300,410, 370, 410);
+			ctx.quadraticCurveTo(360,320, 300, 296);
+			ctx.quadraticCurveTo(280,305, 270, 305);
+			ctx.quadraticCurveTo(230,350, 176, 302);
+			ctx.strokeStyle = "#000000";
+			ctx.fillStyle = "#fe8007";		
+			ctx.fill(); 
+			ctx.stroke();
+
+			//티셔츠
+			ctx.beginPath();
+			ctx.moveTo(170,410);
+			ctx.quadraticCurveTo(170,390, 170, 390);//T
+			ctx.quadraticCurveTo(200,398, 280, 398);//T
+			ctx.quadraticCurveTo(280,410, 280, 410); //T
+			ctx.quadraticCurveTo(280, 410, 300, 410);
+			ctx.strokeStyle = "#000000";
+			ctx.fillStyle = "#e2c732";		
+			ctx.fill(); 
+			ctx.stroke();
+
+	}
+</script>  
+</head>  
+
+<body onload="fn_dft_img()">  
+<canvas id="myCanvas" width="500" height="400"></canvas>  
+</body>  
+</html>  

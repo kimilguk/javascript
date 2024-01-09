@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ECMAScript6</title>
+</head>
+<body>
+  <script>
+    alert(this); // window
+    v1 = "유니코";
+  </script>
+  <!-- use strict 자동 적용 -->
+  <script type="module"> 
+    //alert(this); // undefined
+    ///v2 = "듀크";
+    var v2 = "듀크";
+  </script>
+
+  <script>
+    alert(v1);
+    //alert(v2);
+  </script>
+</body>
+</html>

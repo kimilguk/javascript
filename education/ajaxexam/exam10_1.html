@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<h1>CORS 스팩을 만족하는 않는 서비스 요청</h1>
+	<hr>
+	<script>
+		window.onload = function (e) {
+			let xhr = new XMLHttpRequest();
+			xhr.onload = function() {
+				document.body.innerHTML += `<h3>${xhr.responseText}</h3>`;			
+			};
+			xhr.open("GET", "http://localhost:8088/home", true);
+			xhr.send();    
+		};
+	</script>
+</body>
+</html>
+
+
+

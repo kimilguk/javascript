@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        * { text-align : center; }
+    </style>
+</head>
+<body>
+<h1>홍승희의 HTML5 API 실습</h1>
+<div>
+    <button onclick="save();">저장하기</button>
+    <button onclick="getImg();">읽어오기</button>
+    <button onclick="remove();">삭제하기</button>
+</div>
+<canvas id="canvas" width="600" height="450"></canvas>
+<script>
+    var canvas =document.getElementById('canvas');
+    var context= canvas.getContext('2d');
+
+    context.beginPath();
+    context.fillStyle = 'skyblue';
+    context.arc(300,130,98,0,Math.PI*2, false);
+    context.fill();
+    context.stroke();
+
+    context.beginPath();
+    context.fillStyle = 'white';
+    context.arc(300,150,80,0,Math.PI*2, false);
+    context.fill();
+    context.stroke();
+
+    context.beginPath();
+    context.fillStyle = 'white';
+    context.arc(280,75,20,0,Math.PI*2, false);
+    context.fill();
+    context.stroke();
+
+    context.beginPath();
+    context.fillStyle = 'white';
+    context.arc(320,75,20,0,Math.PI*2, false);
+    context.fill();
+    context.stroke();
+
+    context.beginPath();
+    context.fillStyle = 'black';
+    context.arc(320,75,10,0,Math.PI*2, false);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = 'black';
+    context.arc(280,75,10,0,Math.PI*2, false);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = 'white';
+    context.arc(315,75,3,0,Math.PI*2, false);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = 'white';
+    context.arc(285,75,3,0,Math.PI*2, false);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = 'red';
+    context.arc(300,100,15,0,Math.PI*2, false);
+    context.fill();
+    context.stroke();
+
+    context.beginPath();
+    context.fillStyle = 'white';
+    context.arc(302,98,6,0,Math.PI*2, false);
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(234,150);
+    context.quadraticCurveTo(300,210,365,150);
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(300,115);
+    context.lineTo(300,180);
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(234,105);
+    context.lineTo(285,125);
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(225,135);
+    context.lineTo(285,135);
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(230,160);
+    context.lineTo(285,145);
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(315,125);
+    context.lineTo(366,105);
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(315,135);
+    context.lineTo(375,135);
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(315,145);
+    context.lineTo(370,160);
+    context.stroke();
+
+    function save() {
+        alert(canvas.toDataURL());
+        window.localStorage.setItem("imgcanvas", canvas.toDataURL());
+    }
+
+    function remove() {
+        context.clearRect(0,0,600,450);
+    }
+
+    function getImg() {
+        const img = new Image();
+        img.src = window.localStorage.imgcanvas;
+        img.onload = function() {
+            context.drawImage(img, 0, 0);
+        }
+    }
+</script>
+</body>
+</html>

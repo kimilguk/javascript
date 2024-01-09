@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<h1>프론트엔드 프로그래밍 응용 수행평가</h1>
+	<button id="btn1">AJAX 요청</button>
+	<button id="btn2">DOM 객체의 컨텐트 추출</button>
+	<hr>
+	<output></output>
+	<script>
+		//(1) 두 번째 버튼이 클릭되었을 때 h1 태그를 찾아서 컨텐트를 자바스크립트 콘솔창에 출력하는 코드를 
+		//    함수안에 완성합니다.
+		function findDOM() {
+			var h1 = document.querySelector("h1");//var h1 = document.getElementsByTagName("h1")[0];
+			console.log(h1.innerText);
+		}	
+		// (2) 첫 번째 버튼이 클릭되었을 때 AJAX 통신으로 요청하고 응답되는 내용을 <output> 태그의
+		//     컨텐트로 출력하는 함수입니다. 비워 있는 부분을 채워서 기능을 완성하세요.
+		function requestAjax() {			
+			const xhr = new XMLHttpRequest();
+			xhr.onload = function () {                
+				const output = document.querySelector("output");
+				output.innerHTML = `<h3>${xhr.responseText}</h3>`;				
+			};
+			xhr.open("GET", "http://localhost:8088/boards/friends", true);  
+			xhr.send();
+		}		
+		// (3) 첫 번째 버튼이 클릭되면 requestAjax() 를 호출하고 두 번째 버튼이 클릭되면 findDOM() 을 호출하는 
+		//     완성하세요. 이벤트 모델은 임의로 선택합니다.
+		var btn1 = document.getElementById("btn1");
+		btn1.addEventListener("click", requestAjax);
+		var btn2 = document.getElementById("btn2");
+		btn2.addEventListener("click", findDOM);
+	</script>
+</body>
+</html>

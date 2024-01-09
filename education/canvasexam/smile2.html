@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+* {
+	text-align: center;
+}
+
+button {
+	margin: 1%;
+}
+</style>
+<body>
+	<h1>한승현의 HTML5 API 실습</h1>
+	<div>
+		<button onclick="save();">저장하기</button>
+		<button onclick="restore();">읽어오기</button>
+		<button onclick="initiate();">삭제하기</button>
+	</div>
+	<canvas id="canvas" width="800px" height="800px"
+		style="border: 1px solid gray;"> 아님 </canvas>
+	<script>
+		var elem = document.getElementById('canvas');
+		canvas = elem.getContext('2d');
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(131, 223, 254)';
+		canvas.arc(400, 400, 300, 0, Math.PI * 2);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(131, 223, 254)';
+		canvas.arc(600, 150, 60, 0, Math.PI * 2, true);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(131, 223, 254)';
+		canvas.arc(200, 150, 60, 0, Math.PI * 2, true);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(131, 223, 254)';
+		canvas.arc(200, 150, 60, 0, Math.PI * 2, true);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(253, 178, 0)';
+		canvas.arc(400, 400, 250, 0, Math.PI * 2);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(0,0,0)';
+		canvas.fillRect(450, 300, 120, 15);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(0,0,0)';
+		canvas.fillRect(250, 300, 120, 15);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(0,0,0)';
+		canvas.arc(310, 350, 20, 0, Math.PI * 2);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(0,0,0)';
+		canvas.arc(510, 350, 20, 0, Math.PI * 2);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(255,255,255)';
+		canvas.arc(440, 470, 50, 0, Math.PI * 2);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(255,255,255)';
+		canvas.arc(380, 470, 50, 0, Math.PI * 2);
+		canvas.fill();
+
+		canvas.beginPath();
+		canvas.fillStyle = 'rgb(0,0,0)';
+		canvas.arc(410, 430, 30, 0, Math.PI * 2);
+		canvas.fill();
+
+		function save() {
+			window.localStorage.setItem("exercise", elem.toDataURL());
+		}
+		function restore() {
+			const img = new Image();
+			img.src = window.localStorage.exercise;
+			img.onload = function() {
+				canvas.drawImage(img, 0, 0);
+			}
+		}
+		function initiate() {
+			canvas.clearRect(0, 0, 800, 800);
+		}
+	</script>
+</body>
+</html>

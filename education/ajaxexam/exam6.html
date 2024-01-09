@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+	<style>
+		div {			
+			background-color : yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1>다양한 자원으로의 AJAX 요청</h1>
+  <hr>
+  <div></div>
+	<script>
+		//let url = "content/first.html";
+		//let url = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20240105";
+		//let url = "http://localhost:8088/boards" // blocked by CORS policy, same Origin URL 정책 위반 자바라면, @CrossOrigin(origins = "*") 처리 또는 response.addHeader("Access-Control-Allow-Origin", "*"); 처리
+		let url = "http://localhost:8088/home" // blocked by CORS policy, same Origin URL 정책 위반 사례
+	
+		const xhr = new XMLHttpRequest();
+
+		xhr.addEventListener("load", function() {
+					document.getElementsByTagName('div')[0].textContent = xhr.responseText;       
+    });
+    xhr.open("GET", url, true);
+    xhr.send();
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
